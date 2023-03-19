@@ -11,8 +11,8 @@ MPC control for the SpaceX Dragon spacecraft as it rendezvous with the ISS.
 The spacecraft is in circular orbit and its objective is to dock to the ISS. The simulation is implemented with a "sim to real gap" to account for unmodeled dynamics.
 
 <br>
-The MPC controller solves the following convex optimization problem :
 
+The MPC controller solves the following convex optimization problem :
 
 $$ \begin{align*} 
 \min_{x_{1:N},u_{1:N-1}} \quad & \sum_{i=1}^{N-1} \bigg[ \frac{1}{2} (x_i - \tilde{x}_{ref, i})^TQ({x}_i - \tilde{x}_{ref, i}) + \frac{1}{2} u_i^TRu_i \bigg] + \frac{1}{2}(x_N- \tilde{x}_{ref, N})^TQ_f
@@ -24,16 +24,14 @@ $$ \begin{align*}
  \end{align*}$$
 
 
-
 <p align="center" width="100%">
     <img src="images/spaceX.gif" width="400">
     <br>Docking with the MPC controller
 </p>
 
 
+<br>
 
-<br>
-<br>
 State and control trajectories:
 
 <br>
