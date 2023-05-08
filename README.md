@@ -14,14 +14,17 @@ The spacecraft is in circular orbit and its objective is to dock to the ISS. The
 
 The MPC controller solves the following convex optimization problem :
 
-$$ \begin{align*} 
-\min_{x_{1:N},u_{1:N-1}} \quad & \sum_{i=1}^{N-1} \bigg[ \frac{1}{2} (x_i - \tilde{x}_{ref, i})^TQ({x}_i - \tilde{x}_{ref, i}) + \frac{1}{2} u_i^TRu_i \bigg] + \frac{1}{2}(x_N- \tilde{x}_{ref, N})^TQ_f
-({x}_N- \tilde{x}_{ref, N})\\
- \text{st} \quad & x_1 = x_{\text{IC}} \\
- & x_{i+1} = A x_i + Bu_i \quad \text{for } i = 1,2,\ldots,N-1  \\
- & u_{min} \leq u_i \leq u_{max} \quad \text{for } i = 1,2,\ldots,N-1 \\
- & x_i[2] \leq x_{goal} [2]\quad \text{for } i = 1,2,\ldots,N
- \end{align*}$$
+$$
+\begin{aligned} 
+\min\_{x_{1:N},u_{1:N-1}} \quad & \sum\_{i=1}^{N-1} \bigg[ \frac{1}{2} (x\_i - \tilde{x}\_{ref, i})^TQ({x}\_i - \tilde{x}\_{ref, i}) + \frac{1}{2} u\_i^TRu\_i \bigg] + \frac{1}{2}(x\_N- \tilde{x}\_{ref, N})^TQ\_f
+({x}\_N- \tilde{x}\_{ref, N})\\
+ \text{st} \quad 
+ & x\_1 = x\_{\text{IC}} \\
+ & x\_{i+1} = A x\_i + Bu\_i \quad \text{for } i = 1,2,\ldots,N-1  \\
+ & u\_{min} \leq u\_i \leq u\_{max} \quad \text{for } i = 1,2,\ldots,N-1 \\
+ & x\_i[2] \leq x\_{goal} [2]\quad \text{for } i = 1,2,\ldots,N
+ \end{aligned}
+ $$
 
 
 <p align="center" width="100%">
